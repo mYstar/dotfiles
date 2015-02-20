@@ -4,17 +4,30 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
+# ls colors
+alias ls='ls --color=auto'
+LS_COLORS='ln=35'
+export LS_COLORS
+
+# grep colors
+alias grep='grep --color=auto'
 
 fpath=($ZSH/functions $fpath)
 
+# load all functions
 autoload -U $ZSH/functions/*(:t)
 
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+setopt APPEND_HISTORY # adds history
+setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
+
+# options
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
@@ -28,21 +41,8 @@ setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 
-setopt APPEND_HISTORY # adds history
-setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
-setopt HIST_REDUCE_BLANKS
-
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
 setopt complete_aliases
 
 zle -N newtab
-
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char
