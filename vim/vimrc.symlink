@@ -20,7 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-' the snippet definition
+" the snippet definition
 Plugin 'honza/vim-snippets'
 
 " classic tab completion
@@ -32,6 +32,8 @@ Plugin 'altercation/vim-colors-solarized'
 " sensible vim defaults
 Plugin 'tpope/vim-sensible'
 
+" css autoprefixer
+Plugin 'ioannis-kapoulas/vim-autoprefixer'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -83,7 +85,7 @@ let g:SuperTabDefaultCompletionType = "context"
 map <leader>n :NERDTreeToggle<CR>
 
 " solarized colorscheme
-set background=light
+set background=dark
 colorscheme solarized
 
 " use the system clipboard for all copy/paste operations
