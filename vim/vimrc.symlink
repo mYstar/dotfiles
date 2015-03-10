@@ -34,6 +34,10 @@ Plugin 'tpope/vim-sensible'
 
 " css autoprefixer
 Plugin 'ioannis-kapoulas/vim-autoprefixer'
+
+" Git commands
+Plugin 'tpope/vim-fugitive'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -90,3 +94,6 @@ colorscheme solarized
 
 " use the system clipboard for all copy/paste operations
 set clipboard=unnamedplus
+
+" font settings
+set guifont=Monospace\ 13
