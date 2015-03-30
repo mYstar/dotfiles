@@ -35,6 +35,12 @@ Plugin 'tpope/vim-sensible'
 " vim Wiki
 Plugin 'vimwiki/vimwiki'
 
+" css autoprefixer
+Plugin 'ioannis-kapoulas/vim-autoprefixer'
+
+" Git commands
+Plugin 'tpope/vim-fugitive'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -86,8 +92,11 @@ let g:SuperTabDefaultCompletionType = "context"
 map <leader>n :NERDTreeToggle<CR>
 
 " solarized colorscheme
-set background=light
+set background=dark
 colorscheme solarized
 
 " use the system clipboard for all copy/paste operations
 set clipboard=unnamedplus
+
+" font settings
+set guifont=Monospace\ 13
