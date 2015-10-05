@@ -100,3 +100,15 @@ set clipboard=unnamedplus
 
 " font settings
 set guifont=Monospace\ 13
+
+" get linenumbers
+set nu
+
+" tabstopwidth
+set ts=2
+
+" highlight the current cursor line
+set cursorline
+
+" enable all python highlighting features
+let python_highlight_all = 1
