@@ -1,0 +1,1 @@
+encfs ~/ownCloud/encrypted ~/cloud
