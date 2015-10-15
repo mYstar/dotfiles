@@ -3,4 +3,4 @@ mkdir ~/cloud
 encfs ~/ownCloud/encrypted ~/cloud
 
 # create the link to the scripts in homedir
-ln --symbolic ~/.dotfiles/script ~/script
+ln --symbolic ~/.dotfiles/script ~
