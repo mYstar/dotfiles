@@ -41,6 +41,9 @@ Plugin 'ioannis-kapoulas/vim-autoprefixer'
 " Git commands
 Plugin 'tpope/vim-fugitive'
 
+" gnuplot syntax highlighting
+Plugin 'vim-scripts/gnuplot.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -106,9 +109,18 @@ set nu
 
 " tabstopwidth
 set ts=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+set expandtab
 
 " highlight the current cursor line
 set cursorline
 
 " enable all python highlighting features
 let python_highlight_all = 1
+
+" custom filetypes (for gnuplot)
+let myfiletypefile = "~/.vim/myfiletypes.vim"
+filetype on
+syntax on
