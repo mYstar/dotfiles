@@ -44,6 +44,9 @@ Plugin 'tpope/vim-fugitive'
 " gnuplot syntax highlighting
 Plugin 'vim-scripts/gnuplot.vim'
 
+" java auto-imports
+Plugin 'rustushki/JavaImp.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -124,3 +127,11 @@ let python_highlight_all = 1
 let myfiletypefile = "~/.vim/myfiletypes.vim"
 filetype on
 syntax on
+
+let g:JavaImpPaths =
+   \ "/usr/lib/jvm/openjdk-7," .
+   \ $HOME . "/code/jcuda/jcuda/JCudaJava/src/main/java," .
+   \ $HOME . "/code/jcuda/jcudnn/JCudnnJava/src/main/java," .
+   \ $HOME . "/code/jcuda/jcublas/JCublasJava/src/main/java,"
+
+let g:JavaImpDataDir = $HOME . "/vim/JavaImp"
