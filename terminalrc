@@ -1,0 +1,27 @@
+[Configuration]
+FontName=Liberation Mono 12
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBordersDefault=TRUE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=80x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=TRUE
+MiscMouseAutohide=FALSE
+MiscToolbarsDefault=FALSE
+MiscConfirmClose=FALSE
+MiscCycleTabs=TRUE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscHighlightUrls=TRUE
+TitleMode=TERMINAL_TITLE_REPLACE
+ColorCursor=#808080808080
+ColorForeground=#d7d7d7d7afaf
+ColorBackground=#1c1c1c1c1c1c
+ColorPalette=#282828;#af0000;#5f8700;#af8700;#0087ff;#af005f;#d7d7af;#585858;#262626;#d75f00;#00afaf;#585858;#5f5faf;#5f5faf;#808080;#d7d7af
+Term=xterm-color
+MiscToolbarDefault=FALSE
+MiscScrollAlternateScreen=TRUE
+
