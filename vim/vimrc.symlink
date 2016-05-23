@@ -115,7 +115,7 @@ set ts=2
 set shiftwidth=2
 set softtabstop=2
 set smarttab
-set expandtab
+set noexpandtab
 
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
@@ -137,3 +137,9 @@ let g:JavaImpPaths =
    \ $HOME . "/code/MLPlacer/src,"
 
 let g:JavaImpDataDir = $HOME . "/vim/JavaImp"
+
+" highlight all search matches
+set hlsearch
+
+" change the whitespace chars for list
+set listchars=tab:▸\ ,eol:¬,trail:⌴,conceal:-,nbsp:⌴
