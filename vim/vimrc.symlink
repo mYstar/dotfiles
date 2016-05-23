@@ -117,6 +117,8 @@ set softtabstop=2
 set smarttab
 set expandtab
 
+autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+
 " highlight the current cursor line
 set cursorline
 
@@ -131,7 +133,7 @@ syntax on
 let g:JavaImpPaths =
    \ "/usr/lib/jvm/openjdk-7," .
    \ $HOME . "/code/jcuda/jcuda/JCudaJava/src/main/java," .
-   \ $HOME . "/code/jcuda/jcudnn/JCudnnJava/src/main/java," .
-   \ $HOME . "/code/jcuda/jcublas/JCublasJava/src/main/java,"
+   \ $HOME . "/code/jcuda/jcuda-main/target," .
+   \ $HOME . "/code/MLPlacer/src,"
 
 let g:JavaImpDataDir = $HOME . "/vim/JavaImp"
