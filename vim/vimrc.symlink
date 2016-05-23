@@ -115,7 +115,7 @@ set ts=2
 set shiftwidth=2
 set softtabstop=2
 set smarttab
-set noexpandtab
+set expandtab
 
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
