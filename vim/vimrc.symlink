@@ -143,3 +143,6 @@ set hlsearch
 
 " change the whitespace chars for list
 set listchars=tab:▸\ ,eol:¬,trail:⌴,conceal:-,nbsp:⌴
+
+" allow switching between unsaved buffers
+set hidden
