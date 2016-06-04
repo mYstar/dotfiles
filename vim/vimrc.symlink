@@ -146,3 +146,6 @@ set listchars=tab:▸\ ,eol:¬,trail:⌴,conceal:-,nbsp:⌴
 
 " allow switching between unsaved buffers
 set hidden
+
+" dont break words at the lineend
+set linebreak
