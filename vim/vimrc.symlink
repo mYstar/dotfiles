@@ -53,6 +53,9 @@ Plugin 'tpope/vim-surround'
 " Python mode with autocomplete and documentation
 Bundle 'klen/python-mode'
 
+" Align text at specific symbols
+Plugin 'godlygeek/tabular'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -155,9 +158,9 @@ set hidden
 
 " dont break words at the lineend
 set linebreak
-" use par as formatting program with line width 120, inserting spaces for empty
+" use par as formatting program with line width 80, inserting spaces for empty
 " comment lines and handling nested email comments well
-set formatprg=par\ -w120rq
+set formatprg=par\ -w80rq
 
 "" confing stuff for python mode
 " Python-mode
@@ -200,3 +203,6 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" airline font integration
+let g:airline_powerline_fonts = 1
