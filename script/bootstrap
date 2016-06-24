@@ -137,8 +137,21 @@ install_dotfiles () {
   done
 }
 
+clone_into_git_repos () {
+  while read line
+  do
+    repo=($line)
+    if ! [ "$(ls -A $HOME${repo[1]})" ]; then
+      git clone ${repo[0]} $HOME${repo[1]}
+    else
+      echo skipped: ${repo[0]}
+    fi
+  done < $HOME"/.dotfiles/git-repos.txt"
+}
+
 setup_gitconfig
 install_dotfiles
+clone_into_git_repos
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]

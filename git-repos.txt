@@ -1,0 +1,2 @@
+https://github.com/robbyrussell/oh-my-zsh.git /.dotfiles/oh-my-zsh
+https://github.com/VundleVim/Vundle.vim.git /.dotfiles/vim/bundle/Vundle.vim
