@@ -27,3 +27,8 @@ set -g visual-activity on
 unbind r  
 bind r source-file ~/.tmux.conf  
 
+# bind hjkl to pane switching
+bind-key h select-pane -L
+bind-key j select-pane -U
+bind-key k select-pane -D
+bind-key l select-pane -R
