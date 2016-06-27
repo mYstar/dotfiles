@@ -56,6 +56,9 @@ Bundle 'klen/python-mode'
 " Align text at specific symbols
 Plugin 'godlygeek/tabular'
 
+" enable folding in python
+Plugin 'https://github.com/vim-scripts/python_fold'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -206,3 +209,17 @@ let g:pymode_folding = 0
 
 " airline font integration
 let g:airline_powerline_fonts = 1
+
+" scroll only 8 lines with crtl-d/u
+set scroll=8
+
+" unfold using the spacebar
+nnoremap <Space> za
+vnoremap <Space> za
+
+" enable different cursors for vim modes in xfce terminal
+if has("autocmd")
+  au InsertEnter * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_BLOCK/TERMINAL_CURSOR_SHAPE_UNDERLINE/' ~/.config/xfce4/terminal/terminalrc"                                                                                          
+  au InsertLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"                                                                                          
+  au VimLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"  
+endif
