@@ -114,7 +114,7 @@ set background=dark
 colorscheme solarized
 
 " use the system clipboard for all copy/paste operations
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " font settings
 set guifont=Monospace\ 13
