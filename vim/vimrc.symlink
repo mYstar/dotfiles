@@ -1,94 +1,67 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Required:
+set runtimepath^=/home/est/.vim/bundle/repos/github.com/Shougo/dein.vim
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Required:
+call dein#begin(expand('/home/est/.vim/bundle'))
 
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
 " for very nice file search
-Plugin 'wincent/command-t'
-
+call dein#add('wincent/command-t')
 " file system tree view
-Plugin 'scrooloose/nerdtree'
-
+call dein#add('scrooloose/nerdtree')
 " autocomplete code snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+call dein#add('MarcWeber/vim-addon-mw-utils')
+
+call dein#add('tomtom/tlib_vim')
+
+call dein#add('garbas/vim-snipmate')
 " the snippet definition
-Plugin 'honza/vim-snippets'
-
+call dein#add('honza/vim-snippets')
 " classic tab completion
-Plugin 'ervandew/supertab'
-
+call dein#add('ervandew/supertab')
 " lovely colorscheme
-Plugin 'altercation/vim-colors-solarized'
-
+call dein#add('altercation/vim-colors-solarized')
 " sensible vim defaults
-Plugin 'tpope/vim-sensible'
-
-" vim Wiki
-Plugin 'vimwiki/vimwiki'
-
+call dein#add('tpope/vim-sensible')
 " css autoprefixer
-Plugin 'ioannis-kapoulas/vim-autoprefixer'
-
+call dein#add('ioannis-kapoulas/vim-autoprefixer')
 " Git commands
-Plugin 'tpope/vim-fugitive'
-
+call dein#add('tpope/vim-fugitive')
 " gnuplot syntax highlighting
-Plugin 'vim-scripts/gnuplot.vim'
-
+call dein#add('vim-scripts/gnuplot.vim')
 " java auto-imports
-Plugin 'rustushki/JavaImp.vim'
-
+call dein#add('rustushki/JavaImp.vim')
 " surround text with brackets and tags
-Plugin 'tpope/vim-surround'
-
-" Python mode with autocomplete and documentation
-Bundle 'klen/python-mode'
-
+call dein#add('tpope/vim-surround')
 " Align text at specific symbols
-Plugin 'godlygeek/tabular'
-
+call dein#add('godlygeek/tabular')
 " enable folding in python
-Plugin 'https://github.com/vim-scripts/python_fold'
+call dein#add('https://github.com/vim-scripts/python_fold')
+" lightweight powerline
+call dein#add('vim-airline/vim-airline')
+" Python mode with autocomplete and documentation
+call dein#add('klen/python-mode')
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-"" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-"" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-"" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-"" The sparkup vim script is in a subdirectory of this repo called vim.
-"" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
+" Required:
+call dein#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
 syntax on
 
@@ -114,7 +87,7 @@ set background=dark
 colorscheme solarized
 
 " use the system clipboard for all copy/paste operations
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " font settings
 set guifont=Monospace\ 13
@@ -217,9 +190,14 @@ set scroll=8
 nnoremap <Space> za
 vnoremap <Space> za
 
-" enable different cursors for vim modes in xfce terminal
+" enable different cursors for vim modes in gnome terminal
 if has("autocmd")
-  au InsertEnter * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_BLOCK/TERMINAL_CURSOR_SHAPE_UNDERLINE/' ~/.config/xfce4/terminal/terminalrc"                                                                                          
-  au InsertLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"                                                                                          
-  au VimLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"  
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
