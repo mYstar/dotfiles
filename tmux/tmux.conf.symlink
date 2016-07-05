@@ -32,3 +32,6 @@ bind-key h select-pane -L
 bind-key j select-pane -U
 bind-key k select-pane -D
 bind-key l select-pane -R
+
+# no delay when hittign the esc key
+set -s escape-time 0
