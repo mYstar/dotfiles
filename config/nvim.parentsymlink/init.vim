@@ -98,3 +98,6 @@ set scroll=8
 " unfold using the spacebar
 nnoremap <Space> za
 vnoremap <Space> za
+
+" change cursor shape with modes
+:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1

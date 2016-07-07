@@ -58,6 +58,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# load all aliases
+source $HOME/.dotfiles/zsh/aliases.zsh
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
