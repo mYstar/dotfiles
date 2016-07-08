@@ -4,11 +4,11 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/home/est/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath^=/home/est/.dotfiles/config/nvim.parentsymlink/bundle/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/home/est/.vim/bundle'))
-
+call dein#begin(expand('/home/est/.dotfiles/config/nvim.parentsymlink/bundle'))
+"
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
@@ -25,6 +25,8 @@ call dein#add('godlygeek/tabular')
 call dein#add('https://github.com/vim-scripts/python_fold')
 " lightweight powerline
 call dein#add('vim-airline/vim-airline')
+" fuzzy file finder
+call dein#add('ctrlpvim/ctrlp.vim')
 
 " Required:
 call dein#end()
@@ -101,3 +103,8 @@ vnoremap <Space> za
 
 " change cursor shape with modes
 :let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+" crtl-p config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
