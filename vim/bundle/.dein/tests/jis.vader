@@ -1,0 +1,509 @@
+Given (Some Java and Non-Java imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import com.bar.bang.baz;
+  import java.util.ArrayList;
+
+  class Foo {
+
+  }
+
+
+Execute (Sort them with newline at depth 0):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Java and Non-Java Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import java.util.ArrayList;
+  import com.bar.bang.baz;
+
+  class Foo {
+
+  }
+
+Given (Some Top Imports and Non-Top Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import com.bar.bang.baz;
+  import java.util.ArrayList;
+  import baz.barbag;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with Top Imports Selected):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Non-Top Imports at Bottom of List):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import java.util.ArrayList;
+  import com.bar.bang.baz;
+  import baz.barbag;
+
+  class Foo {
+
+  }
+
+Given (Some Java and Non-Java imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import com.bar.bang.baz;
+  import java.util.ArrayList;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 1):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Java and Non-Java Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import java.util.ArrayList;
+
+  import com.bar.bang.baz;
+
+  class Foo {
+
+  }
+
+Given (Some Java and Non-Java imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import com.bar.bang.baz;
+  import java.util.ArrayList;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 2):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 2
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Java and Non-Java Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+
+  import java.util.ArrayList;
+
+  import com.bar.bang.baz;
+
+  class Foo {
+
+  }
+
+Given (Only 1 Java Import):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 1):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Java and Non-Java Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+
+  class Foo {
+
+  }
+
+Given (More than 1 Java Import, but only Java Imports.):
+  package com.bar.baz.home;
+  
+  import java.util.ArrayList;
+  import java.io.BufferedReader;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 1):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Java and Non-Java Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import java.util.ArrayList;
+
+  class Foo {
+
+  }
+
+Given (No Java Imports):
+  package com.bar.baz.home;
+  
+  import com.bar.bangb.baz;
+  import com.bar.banga.baz;
+  import com.bar.bangc.baz;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 1):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Non-Java Imports):
+  package com.bar.baz.home;
+  
+  import com.bar.banga.baz;
+  import com.bar.bangb.baz;
+  import com.bar.bangc.baz;
+
+  class Foo {
+
+  }
+
+Given (No package statement.):
+  import com.bar.bangb.baz;
+  import com.bar.banga.baz;
+  import com.bar.bangc.baz;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 1):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Sorted list of Non-Java Imports, and still no package statement.):
+  import com.bar.banga.baz;
+  import com.bar.bangb.baz;
+  import com.bar.bangc.baz;
+
+  class Foo {
+
+  }
+
+Given (Empty Top Imports List):
+  import java.bar;
+  import javax.bar;
+  import org.bar;
+  import com.bar;
+
+  class Foo {
+
+  }
+
+Execute (Sort them with newline at depth 0 and with no Top Packages):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = []
+  JIS
+
+Expect (Alphabetically Sorted list of Imports, and still no package statement.):
+  import com.bar;
+  import java.bar;
+  import javax.bar;
+  import org.bar;
+
+  class Foo {
+
+  }
+
+Given (Custom Top Imports List):
+  import java.bar;
+  import javax.bar;
+  import org.bar;
+  import com.bar;
+
+  class Foo {
+
+  }
+
+Execute (Sort the imports with the custom list.):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['org\..*', 'java\..*', 'javax\..*', 'com\..*']
+  JIS
+
+Expect (Alphabetically Sorted list of Imports, and still no package statement.):
+  import org.bar;
+  import java.bar;
+  import javax.bar;
+  import com.bar;
+
+  class Foo {
+
+  }
+
+Given (Static Imports At Top):
+  import static a;
+  import static b;
+  import static c;
+
+  import java.bar;
+
+  class Foo {
+
+  }
+
+Execute (Sort Static Imports to the Top.):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Static Imports Still At Top.):
+  import static a;
+  import static b;
+  import static c;
+  import java.bar;
+
+  class Foo {
+
+  }
+
+Given (Static Imports At Top):
+  import static a;
+  import static b;
+  import static c;
+
+  import java.bar;
+
+  class Foo {
+
+  }
+
+Execute (Sort Static Imports to the Bottom.):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 0
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Static Imports At Bottom.):
+  import java.bar;
+  import static a;
+  import static b;
+  import static c;
+
+  class Foo {
+
+  }
+
+Given (Only Static Imports.):
+  import static a;
+  import static b;
+  import static c;
+
+  class Foo {
+
+  }
+
+Execute (Sort Static Imports to the Bottom.):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 0
+  let g:JavaImpStaticImportsFirst = 0
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Static Imports At Bottom and still above class content.):
+  import static a;
+  import static b;
+  import static c;
+
+  class Foo {
+
+  }
+
+Given (Normal and Static Imports.):
+  import java.foo.bar;
+  import static a;
+  import android.foo.bar;
+  import static b;
+  import com.foo.bar;
+  import static c;
+
+  class Foo {
+
+  }
+
+Execute (Sort Static Imports to the Top with a Package Separator for Normal Imports.):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Static Imports At Bottom and still above class content.):
+  import static a;
+  import static b;
+  import static c;
+
+  import java.foo.bar;
+
+  import com.foo.bar;
+
+  import android.foo.bar;
+
+  class Foo {
+
+  }
+
+Given (Normal and Static Imports.):
+  import java.foo.bar;
+  import static a;
+  import android.foo.bar;
+  import static b;
+  import com.foo.bar;
+  import static c;
+
+  class Foo {
+
+  }
+
+Execute (Sort Static Imports to the Bottom with a Package Separator for Normal Imports.):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 0
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (Static Imports At Bottom and still above class content.):
+  import java.foo.bar;
+
+  import com.foo.bar;
+
+  import android.foo.bar;
+
+  import static a;
+  import static b;
+  import static c;
+
+  class Foo {
+
+  }
+
+Given (Some Top Imports and Non-Top Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import static a;
+  import static b;
+  import com.bar.bang.baz;
+  import java.util.ArrayList;
+  import baz.barbag;
+
+  class Foo {
+
+  }
+
+
+Execute (Sort them with Top Imports Selected and Statics to the Top):
+  let g:JavaImpBottomImports = []
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  JIS
+
+Expect (First Static, the Top Imports, then Non-Top Imports at Bottom of List):
+  package com.bar.baz.home;
+  
+  import static a;
+  import static b;
+
+  import java.io.BufferedReader;
+  import java.util.ArrayList;
+
+  import com.bar.bang.baz;
+
+  import baz.barbag;
+
+  class Foo {
+
+  }
+
+Given (Some Bottom Imports and Middle Imports):
+  package com.bar.baz.home;
+  
+  import java.io.BufferedReader;
+  import static a;
+  import static b;
+  import com.bar.bang.baz;
+  import java.util.ArrayList;
+  import baz.barbag;
+
+  class Foo {
+
+  }
+
+
+Execute (Sort them with Bottom Imports Selected and Statics to the Top):
+  let g:JavaImpBottomImports = ['java\..*', 'javax\..*', 'org\..*', 'com\..*']
+  let g:JavaImpSortPkgSep = 1
+  let g:JavaImpStaticImportsFirst = 1
+  let g:JavaImpTopImports = []
+  JIS
+
+Expect (First Static, the Middle Imports, then Bottom Imports):
+  package com.bar.baz.home;
+  
+  import static a;
+  import static b;
+
+  import baz.barbag;
+
+  import java.io.BufferedReader;
+  import java.util.ArrayList;
+
+  import com.bar.bang.baz;
+
+  class Foo {
+
+  }
+
