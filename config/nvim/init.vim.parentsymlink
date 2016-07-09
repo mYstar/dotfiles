@@ -1,4 +1,4 @@
-"dein Scripts-----------------------------
+" ------------------ dein Scripts ------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -14,19 +14,30 @@ call dein#begin(expand('/home/est/.config/nvim/bundle'))
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
-" call dein#add('Shougo/neosnippet.vim')
+
+" ---- looks ----
 " lovely colorscheme
 call dein#add('altercation/vim-colors-solarized')
+" lightweight powerline
+call dein#add('vim-airline/vim-airline')
+
+" ---- editing ----
 " surround text with brackets and tags
 call dein#add('tpope/vim-surround')
 " Align text at specific symbols
 call dein#add('godlygeek/tabular')
-" enable folding in python
-call dein#add('https://github.com/vim-scripts/python_fold')
-" lightweight powerline
-call dein#add('vim-airline/vim-airline')
 " fuzzy file finder
 call dein#add('ctrlpvim/ctrlp.vim')
+" general autocompletion
+call dein#add('Shougo/deoplete.nvim')
+" snippet engine
+call dein#add('SirVer/ultisnips')
+" snippet definitions
+call dein#add('honza/vim-snippets')
+
+" ---- python ----
+" enable folding in python
+call dein#add('https://github.com/vim-scripts/python_fold')
 
 " Required:
 call dein#end()
@@ -34,34 +45,18 @@ call dein#end()
 " Required:
 filetype plugin indent on
 
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
 
+" ------------------ general vim settings ------------------
 syntax on
-
-" code folding
-set foldmethod=indent
-set foldlevel=99
-
-" split window movement
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
 
 " solarized colorscheme
 set background=dark
 colorscheme solarized
 
-" use the system clipboard for all copy/paste operations
-set clipboard=unnamedplus
-
-" get linenumbers
+" show linenumbers
 set nu
 
-" tabstopwidth
+" tab configuration
 set ts=2
 set shiftwidth=2
 set softtabstop=2
@@ -83,17 +78,26 @@ set hlsearch
 " change the whitespace chars for list
 set listchars=tab:▸\ ,eol:¬,trail:⌴,conceal:-,nbsp:⌴
 
-" allow switching between unsaved buffers
-set hidden
-
 " dont break words at the lineend
 set linebreak
-" use par as formatting program with line width 80, inserting spaces for empty
-" comment lines and handling nested email comments well
-set formatprg=par\ -w80rq
 
 " airline font integration
 let g:airline_powerline_fonts = 1
+
+" change cursor shape with modes
+:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+" ---- editing ----
+
+" code folding
+set foldmethod=indent
+set foldlevel=99
+
+" split window movement
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 " scroll only 8 lines with crtl-d/u
 set scroll=8
@@ -102,10 +106,36 @@ set scroll=8
 nnoremap <Space> za
 vnoremap <Space> za
 
-" change cursor shape with modes
-:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+" use par as formatting program with line width 80, inserting spaces for empty
+" comment lines and handling nested email comments well
+set formatprg=par\ -w80rq
 
-" crtl-p config
+" allow switching between unsaved buffers
+set hidden
+
+" use the system clipboard for all copy/paste operations
+set clipboard=unnamedplus
+
+
+" ------------------ plugin configurations ------------------
+
+" ---- crtl-p config ----
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" ---- deoplete config ----
+let g:deoplete#enable_at_startup = 1
+" disable autocomplete
+let g:deoplete#disable_auto_complete = 1
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+" insert this mapping into supertab
+
+" ---- ultisnips config ----
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<C-e>"
+let g:UltiSnipsJumpForwardTrigger="<C-e>"
+let g:UltiSnipsJumpBackwardTrigger="<C-q>"
+
+" :UltiSnipsEdit splits window vertical
+let g:UltiSnipsEditSplit="vertical"
