@@ -133,9 +133,9 @@ inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#manual_complete
 
 " ---- ultisnips config ----
 " Trigger configuration.
-let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<C-e>"
-let g:UltiSnipsJumpBackwardTrigger="<C-q>"
+let g:UltiSnipsExpandTrigger='<C-q>'
+let g:UltiSnipsJumpForwardTrigger='<Tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
 " :UltiSnipsEdit splits window vertical
 let g:UltiSnipsEditSplit="vertical"
