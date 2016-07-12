@@ -127,13 +127,14 @@ let g:ctrlp_working_path_mode = 'ra'
 " ---- deoplete config ----
 let g:deoplete#enable_at_startup = 1
 " disable autocomplete
-let g:deoplete#disable_auto_complete = 1
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+let g:deoplete#disable_auto_complete = 0
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " insert this mapping into supertab
 
 " ---- ultisnips config ----
 " Trigger configuration.
-let g:UltiSnipsExpandTrigger='<C-q>'
+let g:UltiSnipsExpandTrigger='<C-q>' " this needs to be mapped to something (default: Tab)
+inoremap <silent><expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippet()<CR>" : "\<CR>"
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
