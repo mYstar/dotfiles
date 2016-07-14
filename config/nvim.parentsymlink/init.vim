@@ -1,1 +1,0 @@
-/home/est/.dotfiles/config/nvim/init.vim.parentsymlink
