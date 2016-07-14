@@ -125,10 +125,26 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " ---- deoplete config ----
+
+function! MyTabComplete()
+  let l:col = col('.') - 1
+
+  if pumvisible()
+    return "\<C-n>"
+  else
+    if !l:col || getline('.')[l:col - 1] !~# '\k'
+      return "\<Tab>"
+    else
+      return "\<C-r>=deoplete#mappings#manual_complete()\<CR>"
+    endif
+  endif
+endfunction
+
 let g:deoplete#enable_at_startup = 1
 " disable autocomplete
-let g:deoplete#disable_auto_complete = 0
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+let g:deoplete#disable_auto_complete = 1
+"inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <silent><expr> <Tab> MyTabComplete()
 " insert this mapping into supertab
 
 " ---- ultisnips config ----
