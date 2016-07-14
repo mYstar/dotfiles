@@ -139,6 +139,7 @@ install_dotfiles () {
   do
     tmp=${src#/home/est/.dotfiles/}
     dst="$HOME/.${tmp%.*}"
+    mkdir -p $(dirname $dst)
     link_file "$src" "$dst"
   done
 }
