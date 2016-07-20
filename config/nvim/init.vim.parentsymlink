@@ -35,6 +35,10 @@ call dein#add('SirVer/ultisnips')
 " snippet definitions
 call dein#add('honza/vim-snippets')
 
+" ---- integration ----
+" make util
+call dein#add('neomake/neomake')
+
 " ---- python ----
 " enable folding in python
 call dein#add('https://github.com/vim-scripts/python_fold')
@@ -159,3 +163,11 @@ let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
 " :UltiSnipsEdit splits window vertical
 let g:UltiSnipsEditSplit="vertical"
+
+" ---- neomake config ----
+let g:neomake_python_enabled_makers = ['pylint','pep8']
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list=2
+" map jumping between errors/warnings
+nmap <Leader>n :lnext<CR>
+nmap <Leader>N :lprevious<CR>
