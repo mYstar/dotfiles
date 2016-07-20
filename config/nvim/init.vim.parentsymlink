@@ -43,7 +43,6 @@ call dein#add('neomake/neomake')
 " enable folding in python
 call dein#add('https://github.com/vim-scripts/python_fold')
 " better tab completion
-call dein#add('davidhalter/jedi')
 call dein#add('zchee/deoplete-jedi')
 
 " Required:
@@ -55,6 +54,10 @@ filetype plugin indent on
 
 " ------------------ general vim settings ------------------
 syntax on
+
+" path to python binaries
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " solarized colorscheme
 set background=dark
@@ -92,7 +95,7 @@ set linebreak
 let g:airline_powerline_fonts = 1
 
 " change cursor shape with modes
-:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " ---- editing ----
 
@@ -152,7 +155,9 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
 "inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <silent><expr> <Tab> MyTabComplete()
-" insert this mapping into supertab
+
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+autocmd CompleteDone * pclose " To close preview window of deoplete automagically
 
 " ---- ultisnips config ----
 " Trigger configuration.
