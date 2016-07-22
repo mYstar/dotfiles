@@ -118,7 +118,7 @@ vnoremap <Space> za
 
 " use par as formatting program with line width 80, inserting spaces for empty
 " comment lines and handling nested email comments well
-set formatprg=par\ -w80rq
+set formatprg=par\ -w79rq
 
 " allow switching between unsaved buffers
 set hidden
