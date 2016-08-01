@@ -154,13 +154,23 @@ let g:deoplete#enable_at_startup = 1
 " disable autocomplete
 let g:deoplete#disable_auto_complete = 1
 "inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <silent><expr> <Tab> MyTabComplete()
+"inoremap <silent><expr> <Tab> MyTabComplete()
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd CompleteDone * pclose " To close preview window of deoplete automagically
 
 " ---- ultisnips config ----
 " Trigger configuration.
+let g:ulti_expand_or_jump_res = 0 "default value, just set once
+function! Ulti_ExpandOrJump_and_getRes()
+  if pumvisible()
+    return 0
+  else
+    call UltiSnips#ExpandSnippetOrJump()
+    return g:ulti_expand_or_jump_res
+endfunction
+inoremap <Tab> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":MyTabComplete()<CR>
+
 let g:UltiSnipsExpandTrigger='<C-q>' " this needs to be mapped to something (default: Tab)
 inoremap <silent><expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippet()<CR>" : "\<CR>"
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
