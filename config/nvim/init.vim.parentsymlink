@@ -109,6 +109,12 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" split window resizing
+map <c-Right> <c-w>>
+map <c-Left> <c-w><
+map <c-Up> <c-w>+
+map <c-Down> <c-w>-
+
 " scroll only 8 lines with crtl-d/u
 set scroll=8
 
@@ -125,6 +131,9 @@ set hidden
 
 " use the system clipboard for all copy/paste operations
 set clipboard=unnamedplus
+
+" exit terminal insert mode
+tnoremap <esc> <c-\><c-n>
 
 
 " ------------------ plugin configurations ------------------
