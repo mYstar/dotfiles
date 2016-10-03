@@ -1,1 +1,1 @@
-encfs ~/owncloudHTW/encrypted ~/cloud
+cryfs ~/owncloudHTW/encrypted ~/cloud
