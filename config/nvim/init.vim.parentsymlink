@@ -34,6 +34,10 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('SirVer/ultisnips')
 " snippet definitions
 call dein#add('honza/vim-snippets')
+" use the * command to search for visual selection
+call dein#add('nelstrom/vim-visual-star-search')
+" :Subvert command to search for multiple versions of a word
+call dein#add('tpope/vim-abolish')
 
 " ---- integration ----
 " make util
@@ -41,7 +45,7 @@ call dein#add('neomake/neomake')
 
 " ---- python ----
 " enable folding in python
-call dein#add('https://github.com/vim-scripts/python_fold')
+" call dein#add('https://github.com/vim-scripts/python_fold')
 " better tab completion
 call dein#add('zchee/deoplete-jedi')
 
@@ -63,8 +67,9 @@ let g:python3_host_prog = '/usr/bin/python3'
 set background=dark
 colorscheme solarized
 
-" show linenumbers
-set nu
+" show (relative) linenumbers
+" set nu
+set rnu
 
 " tab configuration
 set ts=2
@@ -116,7 +121,7 @@ map <c-Up> <c-w>+
 map <c-Down> <c-w>-
 
 " scroll only 8 lines with crtl-d/u
-set scroll=8
+set scroll=4
 
 " unfold using the spacebar
 nnoremap <Space> za
@@ -169,6 +174,8 @@ autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd CompleteDone * pclose " To close preview window of deoplete automagically
 
 " ---- ultisnips config ----
+"  snippet directories
+let g:UltiSnipsSnippetDirectories=["MySnips","UltiSnips"]
 " Trigger configuration.
 let g:ulti_expand_or_jump_res = 0 "default value, just set once
 function! Ulti_ExpandOrJump_and_getRes()
@@ -189,7 +196,7 @@ let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 let g:UltiSnipsEditSplit="vertical"
 
 " ---- neomake config ----
-let g:neomake_python_enabled_makers = ['pylint','pep8']
+let g:neomake_python_enabled_makers = ['flake8']
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list=2
 " map jumping between errors/warnings

@@ -1,1 +1,1 @@
-encfs ~/ownCloud/encrypted ~/cloudTU
+encfs ~/owncloudTU/encrypted ~/cloudTU
