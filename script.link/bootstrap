@@ -135,6 +135,13 @@ install_dotfiles () {
     dst="$HOME/.$(basename ${src%.*})"
     link_file "$src" "$dst"
   done
+
+  for src in $(find "$DOTFILES_ROOT/" -maxdepth 2 -name '*.link')
+  do
+    dst="$HOME/$(basename ${src%.*})"
+    link_file "$src" "$dst"
+  done
+
   for src in $(find "$DOTFILES_ROOT/" -maxdepth 4 -name '*.parentsymlink')
   do
     tmp=${src#/home/est/.dotfiles/}

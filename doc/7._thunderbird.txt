@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-03T16:40:18+01:00
+
+====== 7. thunderbird ======
+Created Donnerstag 03 November 2016
+
+===== web.de =====
+email: eric_st@web.de
+pw: from keepassx
+autodetect, IMAP
+
+===== htw =====
+email: Eric.Starke@htw-dresden.de
+pw: <htw unix>
+user: dom/estarke
+server: 
+	imap: [[groupware.dom.htw-dresden.de:143|groupware.dom.htw-dresden.de]][[:143]] (STARTTLS, normal password)
+	smtp: [[groupware.dom.htw-dresden.de:587]] (STARTTLS, normal password)
+
+
+===== TU =====
+email: eric.starke1@tu-dresden.de
+pw: <tu unix>
+user: s9547231
+server: 
+	imap: msx.tu-dresden.de[[:143]] (STARTTLS, normal password)
+	smtp: msx.tu-dresden.de[[:587]] (STARTTLS, Kerberos/GSSAPI)
