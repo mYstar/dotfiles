@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-03T14:08:45+01:00
+
+====== 5. firefox ======
+Created Donnerstag 03 November 2016
+
+===== Addons: =====
+Adblock Plus
+HTTPS Everywhere
+Reddit Enhancement Suite
+VimFx
+
+===== Preferences =====
+General: 
+[*] always ask where to download
+Search:
+default search engine: DuckDuckGo
+Advanced:
+	General:
+	[ ] check my spelling as i type
+	Data Choices:
+	[ ] Health Report
+	[ ] Crash Reporter

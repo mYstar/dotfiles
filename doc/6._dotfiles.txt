@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-03T14:29:17+01:00
+
+====== 6. dotfiles ======
+Created Donnerstag 03 November 2016
+
+===== clone repo =====
+''git clone git@github.com:mYstar/dotfiles.git ~/.dotfiles''
+
+===== install =====
+'''
+~/.dotfiles/script/bootstrap
+nvim → call dein#install()
+vim → call dein#install()
+'''
+
+
+===== fonts =====
+''thunar ~/.fonts''
+open to install
+Edit → Profile Preferences → General:
+[*] custom font: Ubuntu mono derivative Powerline Regular 13
+
+

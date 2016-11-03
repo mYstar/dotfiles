@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-03T11:12:53+01:00
+
+====== 2. owncloud ======
+Created Donnerstag 03 November 2016
+
+===== HTW =====
+**server:** https://icloud.informatik.htw-dresden.de/owncloud
+**user:** estarke
+**pw:** <htw-unix>
+**folder:** [[~/owncloudHTW]]
+
+===== TU =====
+**server:** https://cloudstore.zih.tu-dresden.de
+**user:** s9547231
+**pw:** <tu-unix>
+**folder:** [[~/owncloudTU]]
