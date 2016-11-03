@@ -15,8 +15,8 @@ email: Eric.Starke@htw-dresden.de
 pw: <htw unix>
 user: dom/estarke
 server: 
-	imap: [[groupware.dom.htw-dresden.de:143|groupware.dom.htw-dresden.de]][[:143]] (STARTTLS, normal password)
-	smtp: [[groupware.dom.htw-dresden.de:587]] (STARTTLS, normal password)
+	imap: groupware.dom.htw-dresden.de:143 (STARTTLS, normal password)
+	smtp: groupware.dom.htw-dresden.de:587 (STARTTLS, normal password)
 
 
 ===== TU =====
@@ -24,5 +24,22 @@ email: eric.starke1@tu-dresden.de
 pw: <tu unix>
 user: s9547231
 server: 
-	imap: msx.tu-dresden.de[[:143]] (STARTTLS, normal password)
-	smtp: msx.tu-dresden.de[[:587]] (STARTTLS, Kerberos/GSSAPI)
+	imap: msx.tu-dresden.de:143 (STARTTLS, normal password)
+	smtp: msx.tu-dresden.de:587 (STARTTLS, Kerberos/GSSAPI)
+
+
+===== plugins =====
+lightning
+enigmail
+
+===== calendar =====
+Uni: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/caldav/calendars/estarke/uni
+Freizeit: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/caldav/calendars/estarke/freizeit
+Feiertage: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/caldav/calendars/estarke/sport
+Sport: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/caldav/calendars/estarke/sport1
+Projekt: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/projektliste/
+TODO: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/next-todo/
+reoccuring tasks: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/reoccuring-tasks/
+basket: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/basket/
+sometimesmaybe: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/sometimesmaybe/
+waitingfor: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/waitingfor/
