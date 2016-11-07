@@ -7,3 +7,7 @@ Created Donnerstag 03 November 2016
 
 **file:** ~/owncloudHTW/..
 **pw:** <master>
+
+===== Settings → General =====
+[*] Automatically save after change
+[*] Minimize when copy

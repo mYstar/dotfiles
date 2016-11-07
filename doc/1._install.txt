@@ -16,6 +16,9 @@ profile → settings → ssh and gpg keys → New SSH Key: ~/.ssh/id_rsa.pub
 Launchers → launch terminal: Alt-F3
 Windows → toggle maximize: Alt-F7
 
+**find: **Super → Text entry
+switch to next source: Strg + Shift L
+
 ===== appearance =====
 **find:** Super → appearance → Behavior
 [*] Enable Workspaces

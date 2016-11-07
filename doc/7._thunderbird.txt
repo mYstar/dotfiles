@@ -43,3 +43,9 @@ reoccuring tasks: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/d
 basket: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/basket/
 sometimesmaybe: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/sometimesmaybe/
 waitingfor: https://icloud.informatik.htw-dresden.de/owncloud/remote.php/dav/calendars/estarke/waitingfor/
+
+===== Categories: =====
+Preferences → Calendar
+remove all 
++ HTW
++ home
