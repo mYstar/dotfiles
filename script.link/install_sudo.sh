@@ -16,4 +16,4 @@ apt-get install neovim
 apt-get install libreoffice texlive
 
 ## media
-apt-get install vlc
+apt-get install vlc chromium-browser
