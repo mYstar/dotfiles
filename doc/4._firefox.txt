@@ -16,6 +16,12 @@ General:
 [*] always ask where to download
 Search:
 default search engine: DuckDuckGo
+Privacy:
+	History: never remember
+	Location Bar:
+	[ ] History
+	[*] Bookmarks
+	[ ] Open Tabs
 Advanced:
 	General:
 	[ ] check my spelling as i type

@@ -17,6 +17,7 @@ Launchers → launch terminal: Alt-F3
 Windows → toggle maximize: Alt-F7
 
 **find: **Super → Text entry
+add: German
 switch to next source: Strg + Shift L
 
 ===== appearance =====

@@ -13,7 +13,7 @@ apt-get update
 apt-get install neovim
 
 ## office
-apt-get install libreoffice texlive
+apt-get install libreoffice texlive zim mnemosyne
 
 ## media
 apt-get install vlc chromium-browser
