@@ -1,8 +1,8 @@
 [General]
 ShowToolbar=true
 LastOpenedDatabases=/home/est7/owncloudHTW/password_new.kdbx
-LastDir=/home/est7/owncloudHTW
-LastDatabases=/home/est7/owncloudHTW/password_new.kdbx
+LastDir=/home/est/owncloudHTW
+LastDatabases=/home/est/owncloudHTW/password_new.kdbx, /home/est7/owncloudHTW/password_new.kdbx
 LastKeyFiles=@Variant(\0\0\0\x1c\0\0\0\0)
 RememberLastDatabases=true
 RememberLastKeyFiles=true
