@@ -4,6 +4,7 @@ wget -O - https://www.cryfs.org/install.sh | sudo bash
 
 ## programming
 apt-get install python3 python-dev python-pip python3-dev python3-pip git
+pip3 install ipython pep8 pylint
 
 ## console
 apt-get install software-properties-common xclip
