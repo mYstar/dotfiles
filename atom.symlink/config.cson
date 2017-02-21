@@ -1,0 +1,20 @@
+"*":
+  core:
+    disabledPackages: [
+      "welcome"
+    ]
+    packagesWithKeymapsDisabled: []
+    projectHome: "/home/est/cloud/promotion/code"
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "monokai-slate"
+    ]
+  editor:
+    softWrap: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "a0f33e27-b982-762e-96e2-406d7953b9c5"
+  "vim-mode-plus":
+    flashScreenOnSearchHasNoMatch: false
+    useClipboardAsDefaultRegister: true
