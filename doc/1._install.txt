@@ -18,7 +18,7 @@ Windows → toggle maximize: Alt-F7
 
 **find: **Super → Text entry
 add: German
-switch to next source: Strg + Shift L
+switch to next source: Shift + Shift L
 
 ===== appearance =====
 **find:** Super → appearance → Behavior
