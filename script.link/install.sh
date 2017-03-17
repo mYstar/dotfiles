@@ -1,7 +1,7 @@
-sudo ~/.dotfiles/script/install_sudo.sh
+sudo ~/.dotfiles/script.link/install_sudo.sh
 
 ## installation
-~/.dotfiles/script/bootstrap
+~/.dotfiles/script.link/bootstrap
 
 pip install --upgrade neovim
 pip3 install --upgrade neovim

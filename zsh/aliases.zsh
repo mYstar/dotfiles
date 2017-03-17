@@ -12,3 +12,6 @@ alias find-z='zenity --entry --text="Suchwort:" 2> /dev/null | xargs find . -nam
 # Parameters:
 ## 1: name of the markdown file without ending
 alias md2pdf='~/script/pandoc_latex.sh'
+
+# alias for rm to move to trash
+alias rm='~/script/trashit.sh'

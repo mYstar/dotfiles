@@ -11,10 +11,9 @@ apt-add-repository ppa:umang/indicator-stickynotes xenial
 
 
 Software & Updates → other Software:
-edit: http://ppa.launchpad.net/umang/indicator-stickynotes/ubuntu
-	set Distribution: Xenial
+add: http://ppa.launchpad.net/umang/indicator-stickynotes/ubuntu xenial main
 
 '''
-apt-get update
-apt-get install indicator-stickynotes
+sudo apt-get update
+sudo apt-get install indicator-stickynotes
 '''

@@ -15,6 +15,13 @@
     tabType: "soft"
   "exception-reporting":
     userId: "a0f33e27-b982-762e-96e2-406d7953b9c5"
+  "spell-check":
+    locales: [
+      "de-DE"
+    ]
   "vim-mode-plus":
     flashScreenOnSearchHasNoMatch: false
     useClipboardAsDefaultRegister: true
+  wordcount:
+    goal: 500
+    noextension: true
