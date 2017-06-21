@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2017-06-21T10:19:16+02:00
 
-====== 0. network ======
+====== 1. network ======
 Created Mittwoch 21 Juni 2017
 
 Security: WPA/TKIP or WPA2/AES

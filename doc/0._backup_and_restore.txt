@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-21T11:41:16+02:00
+
+====== 0. backup and restore ======
+Created Mittwoch 21 Juni 2017
+
+TODO
