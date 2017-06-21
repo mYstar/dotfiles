@@ -20,6 +20,7 @@ switch to next input source: Crtl + Space
 ===== extensions =====
 backslide: https://extensions.gnome.org/extension/543/backslide/
 Suspend Button: https://extensions.gnome.org/extension/826/suspend-button/
+pixel saver: https://extensions.gnome.org/extension/723/pixel-saver/
 
 ===== appearance =====
 **find:** Background → set lock screen

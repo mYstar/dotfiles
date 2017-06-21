@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-21T13:31:51+02:00
+
+====== 9. repair stuff ======
+Created Mittwoch 21 Juni 2017
+
+===== bluetooth audio =====
+from: https://askubuntu.com/questions/765233/pulseaudio-fails-to-set-card-profile-to-a2dp-sink-how-can-i-see-the-logs-and
+
+Specifically, create/edit /var/lib/gdm3/.config/pulse/client.conf to read:
+
+autospawn = no
+daemon-binary = /bin/true
+Then
+
+sudo chown gdm:gdm /var/lib/gdm3/.config/pulse/client.conf
+I also added to /etc/pulse/default.pa
+
+load-module module-switch-on-connect
