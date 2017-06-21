@@ -12,17 +12,14 @@ Created Donnerstag 03 November 2016
 profile → settings → ssh and gpg keys → New SSH Key: ~/.ssh/id_rsa.pub
 
 ===== shortcuts =====
-**find:** Super → keyboard → Shortcuts
-Launchers → launch terminal: Alt-F3
-Windows → toggle maximize: Alt-F7
-
-**find: **Super → Text entry
+**find: **Super → Region & Language
 add: German
-switch to next source: Shift + Shift L
+**find: **Super → Keyboard → Typing: 
+switch to next input source: Crtl + Space 
+
+===== extensions =====
+backslide
+Suspend Button
 
 ===== appearance =====
-**find:** Super → appearance → Behavior
-[*] Enable Workspaces
-[*] show menus → in title bar
-[*] visibility → always
-
+**find:** Background → set lock screen

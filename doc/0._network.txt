@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-21T10:19:16+02:00
+
+====== 0. network ======
+Created Mittwoch 21 Juni 2017
+
+Security: WPA/TKIP or WPA2/AES
+EAP-Type: EAP-TTLS
+Anonymous identity: anonymous@tu-dresden.de
+CA Certificate: ~/Documents/TUD-CACert.pem
+Internal Authorization Method: PAP
+User Name: s9547231@tu-dresden.de
+Password: <master-Passwort>
+IP Allocation: automatically per DHCP
