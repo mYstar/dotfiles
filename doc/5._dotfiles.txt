@@ -10,7 +10,7 @@ Created Donnerstag 03 November 2016
 
 ===== install =====
 '''
-~/.dotfiles/script/bootstrap
+~/.dotfiles/script.link/bootstrap
 nvim → call dein#install()
 restart nvim --> :UpdateRemotePlugins
 vim → call dein#install()
