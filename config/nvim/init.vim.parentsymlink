@@ -91,7 +91,7 @@ let python_highlight_all = 1
 set hlsearch
 
 " change the whitespace chars for list
-set listchars=tab:▸\ ,eol:¬,trail:⌴,conceal:-,nbsp:⌴
+" set listchars=tab:▸\ ,eol:¬,trail:⌴,conceal:-,nbsp:⌴
 
 " dont break words at the lineend
 set linebreak
@@ -202,3 +202,6 @@ let g:neomake_open_list=2
 " map jumping between errors/warnings
 nmap <Leader>n :lnext<CR>
 nmap <Leader>N :lprevious<CR>
+
+" repair scroll issue in gnome-terminal
+let $COLORTERM = "gnome-terminal"
