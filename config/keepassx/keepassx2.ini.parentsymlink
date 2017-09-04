@@ -17,9 +17,9 @@ GlobalAutoTypeKey=0
 GlobalAutoTypeModifiers=0
 
 [GUI]
-MainWindowGeometry=@ByteArray(\x1\xd9\xd0\xcb\0\x1\0\0\xff\xff\xff\xf6\0\0\0\x13\0\0\x3)\0\0\x2\xa1\0\0\0\0\0\0\0@\0\0\x3\x1f\0\0\x2\x97\0\0\0\0\0\0)
+MainWindowGeometry=@ByteArray(\x1\xd9\xd0\xcb\0\x1\0\0\0\0\x2\x39\0\0\0\x34\0\0\x5l\0\0\x2\xc2\0\0\x2\x43\0\0\0\x61\0\0\x5\x62\0\0\x2\xb8\0\0\0\0\0\0)
 SplitterState=@Invalid()
-EntryListColumnSizes=150, 150, 100
+EntryListColumnSizes=150, 150, 203
 EntrySearchColumnSizes=150, 150, 150, 203
 ="======"
 Language=system

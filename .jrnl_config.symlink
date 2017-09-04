@@ -1,0 +1,14 @@
+{
+  "default_hour": 9, 
+  "timeformat": "%Y-%m-%d", 
+  "linewrap": 150, 
+  "encrypt": false, 
+  "editor": "nvim", 
+  "default_minute": 0, 
+  "highlight": true, 
+  "journals": {
+    "default": "/home/est/owncloudHTW/journal.txt",
+    "work": "/home/est/owncloudHTW/work.txt"
+  }, 
+  "tagsymbols": "@"
+}
