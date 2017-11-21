@@ -1,57 +1,42 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath^=/home/est/.vim/bundle/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin(expand('/home/est/.vim/bundle'))
-
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+packadd minpac
+call minpac#init()
 
 " for very nice file search
-call dein#add('wincent/command-t')
+call minpac#add('wincent/command-t')
 " file system tree view
-call dein#add('scrooloose/nerdtree')
+call minpac#add('scrooloose/nerdtree')
 " autocomplete code snippets
-call dein#add('MarcWeber/vim-addon-mw-utils')
+call minpac#add('MarcWeber/vim-addon-mw-utils')
 
-call dein#add('tomtom/tlib_vim')
+call minpac#add('tomtom/tlib_vim')
 
-call dein#add('garbas/vim-snipmate')
+call minpac#add('garbas/vim-snipmate')
 " the snippet definition
-call dein#add('honza/vim-snippets')
+call minpac#add('honza/vim-snippets')
 " classic tab completion
-call dein#add('ervandew/supertab')
+call minpac#add('ervandew/supertab')
 " lovely colorscheme
-call dein#add('altercation/vim-colors-solarized')
+call minpac#add('altercation/vim-colors-solarized')
 " sensible vim defaults
-call dein#add('tpope/vim-sensible')
+call minpac#add('tpope/vim-sensible')
 " css autoprefixer
-call dein#add('ioannis-kapoulas/vim-autoprefixer')
+call minpac#add('ioannis-kapoulas/vim-autoprefixer')
 " Git commands
-call dein#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-fugitive')
 " gnuplot syntax highlighting
-call dein#add('vim-scripts/gnuplot.vim')
+call minpac#add('vim-scripts/gnuplot.vim')
 " java auto-imports
-call dein#add('rustushki/JavaImp.vim')
+call minpac#add('rustushki/JavaImp.vim')
 " surround text with brackets and tags
-call dein#add('tpope/vim-surround')
+call minpac#add('tpope/vim-surround')
 " Align text at specific symbols
-call dein#add('godlygeek/tabular')
+call minpac#add('godlygeek/tabular')
 " enable folding in python
-call dein#add('https://github.com/vim-scripts/python_fold')
+call minpac#add('https://github.com/vim-scripts/python_fold')
 " lightweight powerline
-call dein#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline')
 " Python mode with autocomplete and documentation
-call dein#add('klen/python-mode')
-
-" Required:
-call dein#end()
+call minpac#add('klen/python-mode')
 
 " Required:
 "filetype off
