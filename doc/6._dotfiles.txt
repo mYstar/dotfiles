@@ -13,7 +13,12 @@ Created Donnerstag 03 November 2016
 ~/.dotfiles/script.link/bootstrap
 nvim → call dein#install()
 restart nvim --> :UpdateRemotePlugins
-vim → call dein#install()
+git clone 
+'''
+https://github.com/k-takata/minpac.git \
+	[[~/.vim/pack/minpac/opt/minpac]]
+'''
+vim --> :call minpac#update()
 '''
 
 
