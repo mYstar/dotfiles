@@ -20,6 +20,8 @@ call dein#add('Shougo/dein.vim')
 call dein#add('altercation/vim-colors-solarized')
 " lightweight powerline
 call dein#add('vim-airline/vim-airline')
+" startup screen
+call dein#add('mhinz/vim-startify')
 
 " ---- editing ----
 " surround text with brackets and tags
@@ -30,18 +32,26 @@ call dein#add('godlygeek/tabular')
 call dein#add('ctrlpvim/ctrlp.vim')
 " general autocompletion
 call dein#add('Shougo/deoplete.nvim')
-" snippet engine
-call dein#add('SirVer/ultisnips')
-" snippet definitions
-call dein#add('honza/vim-snippets')
 " use the * command to search for visual selection
 call dein#add('nelstrom/vim-visual-star-search')
 " :Subvert command to search for multiple versions of a word
 call dein#add('tpope/vim-abolish')
 
+" ---- deoplete sources ----
+"  snippet manager
+call dein#add('joereynolds/vim-minisnip')
+call dein#add('joereynolds/deoplete-minisnip')
+
+" ---- documentation ----
+" connection to zeal
+call dein#add('KabbAmine/zeavim.vim')
+
 " ---- integration ----
 " make util
 call dein#add('neomake/neomake')
+
+" ---- R -----
+call dein#add('jalvesaq/Nvim-R')
 
 " ---- python ----
 " enable folding in python
@@ -150,50 +160,7 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " ---- deoplete config ----
 
-function! MyTabComplete()
-  let l:col = col('.') - 1
-
-  if pumvisible()
-    return "\<C-n>"
-  else
-    if !l:col || getline('.')[l:col - 1] !~# '\k'
-      return "\<Tab>"
-    else
-      return "\<C-r>=deoplete#mappings#manual_complete()\<CR>"
-    endif
-  endif
-endfunction
-
 let g:deoplete#enable_at_startup = 1
-" disable autocomplete
-let g:deoplete#disable_auto_complete = 1
-"inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <silent><expr> <Tab> MyTabComplete()
-
-autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
-autocmd CompleteDone * pclose " To close preview window of deoplete automagically
-
-" ---- ultisnips config ----
-"  snippet directories
-let g:UltiSnipsSnippetDirectories=["MySnips","UltiSnips"]
-" Trigger configuration.
-let g:ulti_expand_or_jump_res = 0 "default value, just set once
-function! Ulti_ExpandOrJump_and_getRes()
-  if pumvisible()
-    return 0
-  else
-    call UltiSnips#ExpandSnippetOrJump()
-    return g:ulti_expand_or_jump_res
-endfunction
-inoremap <Tab> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":MyTabComplete()<CR>
-
-let g:UltiSnipsExpandTrigger='<C-q>' " this needs to be mapped to something (default: Tab)
-inoremap <silent><expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippet()<CR>" : "\<CR>"
-let g:UltiSnipsJumpForwardTrigger='<Tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
-
-" :UltiSnipsEdit splits window vertical
-let g:UltiSnipsEditSplit="vertical"
 
 " ---- neomake config ----
 let g:neomake_python_enabled_makers = ['flake8']
@@ -205,3 +172,21 @@ nmap <Leader>N :lprevious<CR>
 
 " repair scroll issue in gnome-terminal
 let $COLORTERM = "gnome-terminal"
+
+" ---- Vim-R config ----
+" remapping the basic :: send line
+nmap , <Plug>RDSendLine
+
+" remapping selection :: send multiple lines
+vmap , <Plug>RDSendSelection
+
+" remapping selection :: send multiple lines + echo lines
+vmap ,e <Plug>RESendSelection
+
+" R output is highlighted with current colorscheme
+let g:rout_follow_colorscheme = 1
+
+" R commands in R output are highlighted
+" let g:Rout_more_colors = 1
+
+" end of init.vim
