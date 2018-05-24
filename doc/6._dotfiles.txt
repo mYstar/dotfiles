@@ -23,7 +23,7 @@ vim --> :call minpac#update()
 
 
 ===== fonts =====
-''thunar ~/.fonts''
+''nautilus ~/.fonts''
 open to install
 Edit → Profile Preferences → General:
 [*] custom font: Ubuntu mono derivative Powerline Regular 13

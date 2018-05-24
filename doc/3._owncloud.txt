@@ -9,9 +9,9 @@ Created Donnerstag 03 November 2016
 **server:** https://icloud.informatik.htw-dresden.de/owncloud
 **user:** estarke
 **pw:** <htw-unix>
-**folder:** [[~/owncloudHTW]]
+**folder:** [[~/ownCloud]]
 
-===== TU =====
+===== (TU) =====
 **server:** https://cloudstore.zih.tu-dresden.de
 **user:** s9547231
 **pw:** <tu-unix>

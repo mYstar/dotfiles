@@ -8,8 +8,6 @@ Created Donnerstag 03 November 2016
 ===== Addons: =====
 Adblock Plus
 HTTPS Everywhere
-Reddit Enhancement Suite
-VimFx (Vimium for chrome)
 
 ===== Preferences =====
 General: 
@@ -28,9 +26,3 @@ Advanced:
 	Data Choices:
 	[ ] Health Report
 	[ ] Crash Reporter
-
-===== Bookmarks (chromium only) =====
-'''
-rm ~/.config/chromium/Default/Bookmarks
-ln -s ~/owncloudHTW/Bookmarks ~/.config/chromium/Default/Bookmarks
-'''
