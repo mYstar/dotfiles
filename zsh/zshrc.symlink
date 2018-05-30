@@ -85,8 +85,6 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls=exa
-alias tldr=~/script/tldr.sh
 
 # remove the delay when hitting the ESC character
 export KEYTIMEOUT=1

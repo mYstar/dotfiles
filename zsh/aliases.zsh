@@ -15,3 +15,9 @@ alias md2pdf='~/script/pandoc_latex.sh'
 
 # alias for rm to move to trash
 alias rm='~/script/trashit.sh'
+
+# better file viewer
+# alias ls=exa
+
+# better man pages
+alias tldr=~/script/tldr.sh

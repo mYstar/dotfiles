@@ -1,9 +1,8 @@
 ## cloud
 apt-get install keepassx owncloud-client 
-wget -O - https://www.cryfs.org/install.sh | sudo bash
 
 ## programming
-apt-get install python3 python-dev python-pip python3-dev python3-pip git
+apt-get install python3 python-dev python-pip python3-dev python3-pip git r-base zeal
 pip3 install ipython pep8 pylint optproblems diversipy
 
 ## console
@@ -14,7 +13,7 @@ apt-get update
 apt-get install neovim
 
 ## office
-apt-get install libreoffice texlive zim mnemosyne inkscape thunderbird
+apt-get install libreoffice texlive zim inkscape thunderbird
 
 ## media
-apt-get install vlc chromium-browser
+apt-get install vlc
