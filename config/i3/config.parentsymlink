@@ -224,7 +224,6 @@ bindsym XF86AudioPrev exec playerctl previous
 ### program assignments                                   ###
 ### ----------------------------------------------------- ###
 assign [class="qutebrowser"] $ws1
-assign [class="Firefox"] $ws1
 assign [class="Thunderbird"] $ws2
 assign [class="Zeal"] $ws5
 assign [class="Keepassx"] $ws8
@@ -238,12 +237,13 @@ assign [class="Foxit Reader"] $ws4
 ### ----------------------------------------------------- ###
 exec --no-startup-id i3-msg 'workspace '$ws3';exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace '$ws6';exec i3-sensible-terminal -e "nvim -S .vim/session/todo"'
-exec --no-startup-id i3-msg 'workspace '$ws6';exec localc ~/ownCloud/timeplan_Mai_2018.ods'
+exec --no-startup-id i3-msg 'workspace '$ws6';exec localc ~/ownCloud/timeplan_Juli_2018.ods'
 exec --no-startup-id i3-msg 'workspace '$ws7';exec i3-sensible-terminal -e "nvim -S .vim/session/notes"'
 exec --no-startup-id i3-msg 'workspace '$ws9';exec i3-sensible-terminal -e "nvim -S .vim/session/settings"'
 exec qutebrowser
 exec thunderbird
 exec zeal
+exec nm-applet
 exec keepassx
 exec owncloud
 exec --no-startup-id i3-msg 'workspace '$ws1
