@@ -237,7 +237,7 @@ assign [class="Foxit Reader"] $ws4
 ### ----------------------------------------------------- ###
 exec --no-startup-id i3-msg 'workspace '$ws3';exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace '$ws6';exec i3-sensible-terminal -e "nvim -S .vim/session/todo"'
-exec --no-startup-id i3-msg 'workspace '$ws6';exec localc ~/ownCloud/timeplan_Juli_2018.ods'
+exec --no-startup-id i3-msg 'workspace '$ws6';exec localc ~/ownCloud/timeplan_Aug_2018.ods'
 exec --no-startup-id i3-msg 'workspace '$ws7';exec i3-sensible-terminal -e "nvim -S .vim/session/notes"'
 exec --no-startup-id i3-msg 'workspace '$ws9';exec i3-sensible-terminal -e "nvim -S .vim/session/settings"'
 exec qutebrowser
